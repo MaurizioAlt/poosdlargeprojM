@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Bit Blocked</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+
+</head>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="./js/code.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <body onload="getPosts()">
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bit Blocked</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="leaderboard.html">Leaderboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="chat.html">Chat</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Global Leaderboard</h1>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <select id="level_id" class="form-control">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="col-lg-6">
+        Select the level to display the corresponding high scores.
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $('#level_id').on('click',function()
+      {
+        getPosts();
+        // alert($(this).val());
+        // console.log($(this).val());
+      });
+    </script>
+
+    <div class="col-auto my-1">
+      <p id="LogError"></p>
+    </div>
+    <p id="searchResult"></p>
+
+    <div id="scoreList" class="col-auto my-1">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nickname</th>
+            <th scope="col">Best Time (s)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="col-auto my-1">
+      <table style="visibility:hidden" class="table table-striped">
+      </table>
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Bit Blocked 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+</body>
+
+</html>
